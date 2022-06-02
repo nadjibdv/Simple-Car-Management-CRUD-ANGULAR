@@ -1,0 +1,65 @@
+
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Manage <b>Person</b></h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <a  class="btn btn-success" [routerLink]="['add']"><i class="material-icons">&#xE147;</i> <span>Add New Person</span></a>
+                      </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>ID Person</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+                    <tr *ngFor="let itemPerson of servicePerson.people">
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+                        <td>{{itemPerson.person_ID}}</td>
+                        <td>{{itemPerson.person_FName}}</td>
+                        <td>{{itemPerson.person_LName}}</td>
+                        <td>{{itemPerson.person_Phone}}</td>
+                        <td>
+                            <a [routerLink]="['edit' , itemPerson.person_ID ]" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a [routerLink]="['delete' , itemPerson.person_ID]" class="delete"  ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+                
+
+            </table>
+    
+            
+
+        </div>
+    </div>        
+</div>
+

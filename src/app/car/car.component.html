@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>Manage <b>Car</b></h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <a [routerLink]="['add']" class="btn btn-success"  ><i class="material-icons">&#xE147;</i> <span>Add New Car</span></a>
+                     </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+
+
+                        <th>Image</th>
+                        <th>ID Car</th>
+                        <th>Name Car</th>
+                        <th>Plate Car</th>
+                        <th>ID Person</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+
+
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+                    <tr *ngFor="let itemCar of serviceCar.carsall">
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+
+
+
+
+
+
+                        <td><img [src] ="serviceCar.getUrlImage(itemCar.car_ImageUrl)"  style="width:80px" class="img-thumbnail" /></td>
+                        <td>{{itemCar.car_ID}}</td>
+                        <td>{{itemCar.car_Name}}</td>
+                        <td>{{itemCar.car_Plate}}</td>
+                        <td>{{itemCar.person_ID}}</td>
+                        <td>{{itemCar.person_FName}}</td>
+                        <td>{{itemCar.person_LName}}</td>
+                        <td>{{itemCar.person_Phone}}</td>
+                       
+
+
+                        <td>
+                            <a [routerLink]="['edit' , itemCar.car_ID ]" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a [routerLink]="['delete' , itemCar.car_ID ]"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+
+                        
+                    </tr>
+
+
+                </tbody>
+
+                
+            </table>
+
+
+        
+        </div>
+    </div>        
+</div>

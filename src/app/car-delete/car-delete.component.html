@@ -1,0 +1,20 @@
+<div id="deleteCarModal" class="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="onClickDelete()">
+                <div class="modal-header">						
+                    <h4 class="modal-title">Delete Car</h4>
+      
+                </div>
+                <div class="modal-body">					
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button"  class="btn btn-default" data-dismiss="modal" value="Cancel" [routerLink]="['/cars']" >
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
